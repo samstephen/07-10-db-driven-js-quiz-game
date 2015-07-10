@@ -1,0 +1,37 @@
+<%= erb :"main/header" %>
+
+<div id="quiz-wrapper">
+
+  <% Quiz.all.each do |object| %>
+    <div id = "question<%= object.id %>">
+      <h2><%= object.question %></h2>
+        <ul>
+          <% object.choices.split(", ").each do |choice| %>
+            <li><%= choice %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+  <input type="text" id="answer">
+  <button id="submitter">
+    Submit Answer
+  </button>
+</div>
+
+<div id='result-wrapper'>
+  <div id="question_result">
+  </div>
+
+  <div id="total_result">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
